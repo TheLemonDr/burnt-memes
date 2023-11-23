@@ -85,6 +85,24 @@ h1 {
         <p><a href="17.mp4">XVII</a></p>
         <p><a href="18.mp4">XVIII</a></p>
         <p><a href="19.mp4">IXX</a></p>
+
+        <br>
+
+        <p>Last Updated <span id="commit-date"></span></p>
+
+        <script>
+          const repository = "thelemondr/burnt-memes";
+          const requestURL = `https://api.github.com/repos/${repository}/commits`;
+      
+          fetch(requestURL)
+            .then(response => response.json())
+            .then(data => {
+              const lastCommitDate = new Date(data[0].commit.author.date);
+              const formattedDate = lastCommitDate.toLocaleDateString();
+              const element = document.getElementById("commit-date");
+              element.textContent = formattedDate;
+            });
+        </script>
         
       
     </div>
