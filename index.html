@@ -1,115 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Burnt Memes</title>
-  <style>
-html {
-  height:100%;
-}
-
-body {
-  margin:0;
-}
-
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
-
-.content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  left:50%;
-  padding:10vmin;
-  position:fixed;
-  text-align:center;
-  top:50%;
-  transform:translate(-50%, -50%);
-}
-
-h1 {
-  font-family:monospace;
-}
-
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <div class="content">
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+    }
+    section {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+    section:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(#000000, #00ff00, #000000);
+      animation: background-slide 6s linear infinite;
+    }
+    @keyframes background-slide {
+      from { transform: translatey(-100%); }
+      to { transform: translatey(100%); }
+    }
+    section span {
+      position: relative;
+      display: block;
+      width: calc(5.25vw - 2px);
+      height: calc(5.25vw - 2px);  
+      background-color: #181818;
+      transition: background 1.5s;
+    }
+    section span:hover {
+      background-color: #00ff00;
+      transition: background 200ms;  
+    }
+    @media (max-width: 900px) {
+      section span {
+        width: calc(10vw - 2px);
+        height: calc(10vw - 2px);
+      }  
+    }
+    @media (max-width: 600px) {
+      section span {
+        width: calc(20vw - 2px);
+        height: calc(20vw - 2px);
+      }  
+    }
+    
+        .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+
+    .overlay h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .overlay a {
+      color: white;
+      text-decoration: underline;
+    }
+    
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  </style>
+  <section>
+    <div class="overlay">
       <h1>Select which Burnt Memes you wish to watch.</h1>  
       
-        <p><a href="1.mp4">I</a></p>
-        <p><a href="2.mp4">II</a></p>
-        <p><a href="3.mp4">III</a></p>
-        <p><a href="4.mp4">IV</a></p>
-        <p><a href="5.mp4">V</a></p>
-        <p><a href="6.mp4">VI</a></p>
-        <p><a href="7.mp4">VII</a></p>
-        <p><a href="8.mp4">VIII</a></p>
-        <p><a href="9.mp4">IX</a></p>
-        <p><a href="10.mp4">X</a></p>
-        <p><a href="11.mp4">XI</a></p>
-        <p><a href="12.mp4">XII</a></p>
-        <p><a href="13.mp4">XIII</a></p>
-        <p><a href="14.mp4">XIV</a></p>
-        <p><a href="15.mp4">XV</a></p>
-        <p><a href="16.mp4">XVI</a></p>
-        <p><a href="17.mp4">XVII</a></p>
-        <p><a href="18.mp4">XVIII</a></p>
-        <p><a href="19.mp4">IXX</a></p>
-        <p><a href="20.mp4">XX</a></p>
-        <p><a href="21.mp4">XXI</a></p>
-        <p><a href="22.mp4">XXII</a></p>
-        <p><a href="23.mp4">XXIII</a></p>
-        <p><a href="24.mp4">XXIV</a></p>
+      <div class="grid-container">
+      <p><a href="1.mp4">1</a></p>
+      <p><a href="2.mp4">2</a></p>
+      <p><a href="3.mp4">3</a></p>
+      <p><a href="4.mp4">4</a></p>
+      <p><a href="5.mp4">5</a></p>
+      <p><a href="6.mp4">6</a></p>
+      <p><a href="7.mp4">7</a></p>
+      <p><a href="8.mp4">8</a></p>
+      <p><a href="9.mp4">9</a></p>
+      <p><a href="10.mp4">10</a></p>
+      <p><a href="11.mp4">11</a></p>
+      <p><a href="12.mp4">12</a></p>
+      <p><a href="13.mp4">13</a></p>
+      <p><a href="14.mp4">14</a></p>
+      <p><a href="15.mp4">15</a></p>
+      <p><a href="16.mp4">16</a></p>
+      <p><a href="17.mp4">17</a></p>
+      <p><a href="18.mp4">18</a></p>
+      <p><a href="19.mp4">19</a></p>
+      <p><a href="20.mp4">20</a></p>
+      <p><a href="21.mp4">21</a></p>
+      <p><a href="22.mp4">22</a></p>
+      <p><a href="23.mp4">23</a></p>
+      <p><a href="24.mp4">24</a></p>
 
-        <br>
-
-        <p>Last Updated <span id="commit-date"></span></p>
-
-        <script>
-          const repository = "thelemondr/burnt-memes";
-          const requestURL = `https://api.github.com/repos/${repository}/commits`;
-      
-          fetch(requestURL)
-            .then(response => response.json())
-            .then(data => {
-              const lastCommitDate = new Date(data[0].commit.author.date);
-              const formattedDate = lastCommitDate.toLocaleDateString();
-              const element = document.getElementById("commit-date");
-              element.textContent = formattedDate;
-            });
-        </script>
-        
-      
+      </div>
     </div>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </section>
+  
 </body>
 </html>
